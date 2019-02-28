@@ -1,0 +1,42 @@
+<h1>Eat-Da-Burger!</h1>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        {{#each tasks}}
+          {{#unless this.completed}}
+            <div>
+              <form action="/tasks/{{this.id}}?_method=PUT" method="POST">
+                <button type="submit" class='taskAvailable'> {{this.task_name}}</button>
+              </form>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="col s6">
+        {{#each tasks}}
+          {{#if this.completed}}
+            <div class='completedTask'>
+              <div>
+                {{this.task_name}}
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</main>
+
+<h2>Add A Burger Option</h2>
+
+<div class="row">
+  <div class="col s12">
+    <form action="/tasks" method="POST">
+      <input type="text" id="name" name="task_name" placeholder="Task">
+      <button type="submit" class="addTaskButton">Add Your Task to be done</button>
+    </form>
+  </div>
+</div>
