@@ -1,7 +1,8 @@
 
-body {
-    width: 100%;
-    margin: 0 auto;
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20pt;
 }
 
 .taskAvailable {

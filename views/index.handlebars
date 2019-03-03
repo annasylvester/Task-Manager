@@ -1,38 +1,48 @@
 <main>
-  <div class="row">
-    <div class="container center-align">
-      <div class="col l5 m5 s6">
-        {{#each tasks}}
-        {{#unless this.completed}}
-        <div>
-          <form action="/tasks/{{this.id}}?_method=PUT" method="POST">
-            <button type="submit" class="taskAvailable">
-              {{this.task_name}}
-            </button>
-          </form>
-        </div>
-        {{/unless}}
-        {{/each}}
-      </div>
+  <div class="container" style="background-color: #c9f9ff">
+    <div class="col l1 1m 0s"></div>
+  </div>
 
-      <div class="col l5 m5 s6">
+  <div class="col 10l 10m 12s">
+    <div style="background-color: white">
+      <div class="row">
+        <div class="headerPic center-align">
+          <h1>Task Manager</h1>
+          <div class="container center-align">
+            <div class="col l5 m5 s6">
+              {{#each tasks}}
+              {{#unless this.completed}}
+              <div>
+                <form action="/tasks/{{this.id}}?_method=PUT" method="POST">
+                  <button type="submit" class="taskAvailable">
+                    {{this.task_name}}
+                  </button>
+                </form>
+              </div>
+              {{/unless}}
+              {{/each}}
+            </div>
 
-        {{#each tasks}}
-        {{#if this.completed}}
+            <div class="col l5 m5 s6">
 
-        <div class="completedTask">
-          <div>
-            {{this.task_name}}
+              {{#each tasks}}
+              {{#if this.completed}}
+
+              <div class="completedTask">
+                <div>
+                  {{this.task_name}}
+                </div>
+              </div>
+
+              {{/if}}
+              {{/each}}
+
+            </div>
           </div>
         </div>
-
-        {{/if}}
-        {{/each}}
-
       </div>
     </div>
   </div>
-
 
   <div class="row">
     <div class="container center-align">
@@ -47,4 +57,20 @@
       <div class="col l3 m3 s2"></div>
     </div>
   </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="container" style="background-color: #c9f9ff">
+    <div class="col l1 m1 s0"></div>
+  </div>
+
+  <footer class="taskManagerFooter">
+    <div class="footer-copyright">
+      <div class="container">
+        <a class="grey-text text-lighten-4 right" href="https://github.com/annasylvester/Task-Manager">Reference
+          Work</a>
+      </div>
+    </div>
+  </footer>
 </main>
