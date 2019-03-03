@@ -1,31 +1,11 @@
-html {
-    background-color: #FFC04C;
-}
 
 body {
-    width: 75%;
-   margin: 0 auto; 
-
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
-   background-color: white;
+    width: 100%;
+    margin: 0 auto;
 }
 
-#cute_burger {
-    display: block;
-   margin: auto;
-}
-
-h1 {
-    text-align: center;
-    font-family: 'Fontdiner Swanky', cursive;
-    font-size: 65px;
-    margin: 50px;
-}
-
-.burgerAvailable {
-    font-family: 'Crafty Girls', cursive;
+.taskAvailable {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 20px;
     text-align: center;
@@ -38,12 +18,12 @@ h1 {
     border: none;
 }
 
-.burgerAvailable:hover {
+.taskAvailable:hover {
     background-color: #81ff94;
 }
 
-.burgerEaten {
-    font-family: 'Crafty Girls', cursive;
+.completedTask {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 20px;
     text-align: center;
@@ -55,18 +35,16 @@ h1 {
 }
 
 h2 {
-     text-align: center;
-    font-family: 'Fontdiner Swanky', cursive;
-    font-size: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     margin: 50px;
 }
 
-.formContainer {
-    background-color: orange;
-}
 
-.addBurgerButton {
-    font-family: 'Crafty Girls', cursive;
+
+.addTaskButton {
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 20px;
     text-align: center;
@@ -79,11 +57,10 @@ h2 {
     border: none;
 }
 
-.addBurgerButton:active {
-   background-color: #FFC04C;
+.addTaskButton:active {
+    background-color: #FFC04C;
 }
 
-.burgerFooter {
-   background-color: #FFC04C;
-   padding: 20px 0;
+.taskManagerFooter {
+    padding: 20px 0;
 }
