@@ -1,15 +1,16 @@
 <main>
-  <div class="container" style="background-color: #c9f9ff">
+  <div class="container">
     <div class="col l1 1m 0s"></div>
   </div>
 
   <div class="col 10l 10m 12s">
-    <div style="background-color: white">
+    <div class="container" style="background-color: white">
       <div class="row">
         <div class="headerPic center-align">
           <h1>Task Manager</h1>
           <div class="container center-align">
-            <div class="col l5 m5 s6">
+
+            <div class="col l5 m5 s6" style="padding-bottom: 5%">
               {{#each tasks}}
               {{#unless this.completed}}
               <div>
@@ -23,17 +24,12 @@
               {{/each}}
             </div>
 
-            <div class="col l5 m5 s6">
-
+            <div class="col l5 m5 s6" style="padding-bottom: 5%">
               {{#each tasks}}
               {{#if this.completed}}
-
               <div class="completedTask">
-                <div>
-                  {{this.task_name}}
-                </div>
+                {{this.task_name}}
               </div>
-
               {{/if}}
               {{/each}}
 
@@ -47,13 +43,17 @@
   <div class="row">
     <div class="container center-align">
       <div class="col l3 m3 s2"></div>
-      <div class="col l6 m6 s8">
+
+      <div class="col l6 m6 s8" style="background-color: #639fff; padding: 3%;">
         <h2>Add a task to do:</h2>
-        <form action="/tasks" method="POST">
-          <input type="text" id="name" name="task_name" placeholder="Task">
-          <button type="submit" class="addTaskButton">Add!</button>
-        </form>
+        <div class="container">
+          <form action="/tasks" method="POST">
+            <input type="text" id="name" name="task_name" placeholder="Task" class="center-align" style="background-color: white">
+            <button type="submit" class="addTaskButton">Submit</button>
+          </form>
+        </div>
       </div>
+
       <div class="col l3 m3 s2"></div>
     </div>
   </div>
@@ -61,7 +61,7 @@
   </div>
   </div>
 
-  <div class="container" style="background-color: #c9f9ff">
+  <div class="container">
     <div class="col l1 m1 s0"></div>
   </div>
 
