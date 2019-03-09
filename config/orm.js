@@ -2,8 +2,8 @@ const connection = require("../config/connection.js")
 
 // Helper function for generating MySQL syntax
 function printQuestionMarks(num) {
-	var arr = [];
-	for (var i = 0; i < num; i++) {
+	let arr = [];
+	for (let i = 0; i < num; i++) {
 		arr.push("?");
 	}
 	return arr.toString();
@@ -13,19 +13,14 @@ function printQuestionMarks(num) {
 function objToSql(ob) {
 	var arr = [];
 	for (var key in ob) {
-		var value = ob[key];
-		if (Object.hasOwnProperty.call(ob, key)) {
-			if (typeof value === "string" && value.indexOf(" ") >= 0) {
-				value = "'" + value + "'";
-			}
-			arr.push(key + "=" + value);
-		}
+		arr.push(key + "=" + ob[key]);
 	}
+	return arr.toString();
 }
 
 let orm = {
 	selectAll: function (tableInput, cb) {
-		var queryString = "SELECT * FROM " + tableInput + ";";
+		let queryString = "SELECT * FROM " + tableInput + ";";
 		connection.query(queryString, function (err, result) {
 			if (err) {
 				throw err;
@@ -34,7 +29,7 @@ let orm = {
 		});
 	},
 	insertOne: function (table, cols, vals, cb) {
-		var queryString = "INSERT INTO " + table;
+		let queryString = "INSERT INTO " + table;
 
 		queryString += " (";
 		queryString += cols.toString();
@@ -55,7 +50,7 @@ let orm = {
 	},
 	// An example of objColVals would be {name: panther, sleepy: true}
 	updateOne: function (table, objColVals, condition, cb) {
-		var queryString = "UPDATE " + table;
+		let queryString = "UPDATE " + table;
 
 		queryString += " SET ";
 		queryString += objToSql(objColVals);

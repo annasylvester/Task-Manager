@@ -20,7 +20,7 @@ router.post("/tasks", function (req, res) {
         "task_name"
     ], [
         req.body.task_name
-    ], function (data) {
+    ], function (result) {
         // Send back the ID of the new quote
         res.redirect('/');
     });
@@ -33,10 +33,9 @@ router.put("/tasks/:id", function (req, res) {
 
     tasks.updateOne({
         completed: true
-    }, condition, function (data) {
+      }, condition, function(result) {
         res.redirect('/');
-
-    });
+      });
 });
 
 
