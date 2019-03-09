@@ -8,7 +8,7 @@
   {{!-- yellow notepad container --}}
   <div class="col 10l 10m 12s">
 
-    <div class="container" style="background-color: #fffcd1">
+    <div class="container" style="background-color: #fffcd1; padding-bottom: 8%">
       <div class="row">
         <div class="headerPic center-align">
           <h1 style="font-family: 'Permanent Marker', cursive; font-size: 34pt">Task Manager</h1>
@@ -30,7 +30,8 @@
             </div>
 
             {{!-- tasks list --}}
-            <div class="col l5 m5 s6" style="padding-bottom: 5%">
+            <div class="col l5 m5 s5">
+              <h2 style="font-family: 'Permanent Marker', cursive; font-size: 12pt">Todo:</h2>
               {{#each tasks}}
               {{#unless this.completed}}
               <div>
@@ -44,8 +45,9 @@
               {{/unless}}
               {{/each}}
             </div>
-
-            <div class="col l5 m5 s6" style="padding-bottom: 5%">
+            <div class="col l1 m1 s1"></div>
+            <div class="col l5 m5 s5">
+              <h2 style="font-family: 'Permanent Marker', cursive; font-size: 12pt; padding-bottom: 20px">Finished:</h2>
               {{#each tasks}}
               {{#if this.completed}}
               <div class="completedTask">
