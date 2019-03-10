@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (task_manager.js) to use its database functions.
 const tasks = require("../models/task_manager.js");
 
 // Create all our routes and set up logic within those routes where required.
